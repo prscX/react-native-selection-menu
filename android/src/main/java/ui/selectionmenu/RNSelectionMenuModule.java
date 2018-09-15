@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.widget.Toast;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -40,7 +41,7 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void Show(final ReadableMap props) {
+  public void Show(final ReadableMap props, final Callback callback) {
 
     ReadableArray values = props.getArray("values");
     ReadableArray selectedValues = props.getArray("selectedValues");
@@ -59,7 +60,7 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
     AlertView alert = new AlertView(title, "Message", AlertStyle.BOTTOM_SHEET);
     if (presentationType == 0 || presentationType == 1) {
       if (presentationType == 0) {
-        alert = new AlertView(title, "Message", AlertStyle.IOS);
+        alert = new AlertView(title, "Message", AlertStyle.BOTTOM_SHEET);
       } else if (presentationType == 1) {
         alert = new AlertView(title, "Message", AlertStyle.DIALOG);
       }
@@ -68,6 +69,7 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
         alert.addAction(new AlertAction(values.getString(i), AlertActionStyle.DEFAULT, new AlertActionListener() {
           @Override
           public void onActionClick(@NotNull AlertAction action) {
+            callback.invoke(action.getTitle());
           }
         }));
       }
@@ -85,6 +87,8 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
                 @Override
                 public void onSelected(BaseSearchDialogCompat dialog,
                                        SampleModel item, int position) {
+
+                  callback.invoke(item.getTitle());
                   dialog.dismiss();
                 }
               });
