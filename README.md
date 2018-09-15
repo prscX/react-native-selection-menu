@@ -14,6 +14,9 @@ If this project has helped you out, please support us with a star 🌟
 This library is a React Native bridge around native elegant selection list or dropdown menu for both Android and iOS.
 
 
+> **Limitation**: `Multiple selection is currently not supported on Android`
+
+
 #### iOS
 
 | **[rushisangani/RSSelectionMenu](https://github.com/rushisangani/RSSelectionMenu)**             |
@@ -98,7 +101,9 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 
 | Prop                   | Type                | Default | Note                                             |
 | ---------------------- | ------------------- | ------- | ------------------------------------------------ |
-| ``     | ``            |         |                  |
+| `title`     | `string`            |    `Pick your value`     | Specify title of selection menu                 |
+| `tickColor: iOS`     | `string: HEX-COLOR`            |    `#157efb`     | Specify tick color                 |
+| `actionTitle: iOS`     | `string`            |    `Select`     | Specify action title, this appear when selection type is `multiple`                 |
 
 - **Selection**
 
@@ -109,6 +114,27 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 
 
 > **Limitation**: `Multiple selection is currently not supported on Android`
+
+- **Presentation Style**
+
+| Type                   | Value                |
+| ---------------------- | ------------------- |
+| `Actionsheet`     | `0`            |
+| `Alert`     | `1`            |
+| `Formsheet`     | `2`            |
+
+- **Search**
+
+| Prop                   | Type                | Default | Note                                             |
+| ---------------------- | ------------------- | ------- | ------------------------------------------------ |
+| `enableSearch`     | `bool`            |    `false`     | Enable/Disable search capability                 |
+| `searchPlaceholder`     | `string`            |    `Search`     | Specify your search placeholder value                 |
+| `searchTintColor: iOS`     | `string: HEX-COLOR`            |    `#d3d3d3`     | Specify search tint color                 |
+
+
+> **Limitation**
+> - Android: Search is supported only for `Formsheet` presentation style
+> - Formsheet: By default has search capability
 
 
 
