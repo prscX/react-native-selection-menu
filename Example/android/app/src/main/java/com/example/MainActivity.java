@@ -1,5 +1,7 @@
 package com.example;
 
+import android.support.v7.app.AppCompatActivity;
+
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {

@@ -25,9 +25,9 @@ export default class App extends Component<Props> {
       selectedValues: ['One', 'Two'],
       selectionType: 1,
       presentationType: 0,
-      // enableSearch: true,
-      // searchPlaceholder: 'Search Value',
-      // searchTintColor: '#FFFFFF'
+      enableSearch: true,
+      searchPlaceholder: 'Search Value',
+      searchTintColor: '#FFFFFF'
     })
   }
 
@@ -37,8 +37,6 @@ export default class App extends Component<Props> {
         <TouchableOpacity
           onPress={() => {
             this._onPress();
-
-            // this.setState({ visible: true });
           }}
         >
           <Text>Click</Text>
