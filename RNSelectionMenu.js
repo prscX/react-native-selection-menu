@@ -14,9 +14,11 @@ class SelectionMenu {
     presentationType: PropTypes.number,
 
     title: PropTypes.string,
+    subtitle: PropTypes.string,
     actionTitle: PropTypes.string,
     tickColor: PropTypes.string,
     cancellable: PropTypes.bool,
+    theme: PropTypes.string,
 
     enableSearch: PropTypes.bool,
     searchPlaceholder: PropTypes.string,
@@ -31,7 +33,9 @@ class SelectionMenu {
 
     tickColor: "#157efb",
     title: "Pick your value",
+    subtitle: "",
     actionTitle: "Select",
+    theme: 0,
 
     enableSearch: false,
     searchPlaceholder: "Search",
@@ -51,11 +55,13 @@ class SelectionMenu {
       props.presentationType = SelectionMenu.defaultProps.presentationType;
 
     if (props.title === undefined)
-      props.title = SelectionMenu.defaultProps.title;
+      props.title = SelectionMenu.defaultProps.title
+    if (props.subtitle === undefined) props.subtitle = SelectionMenu.defaultProps.subtitle
     if (props.actionTitle === undefined)
       props.actionTitle = SelectionMenu.defaultProps.actionTitle;
     if (props.tickColor === undefined)
       props.tickColor = SelectionMenu.defaultProps.tickColor;
+    if (props.theme === undefined) props.theme = SelectionMenu.defaultProps.theme;
 
     if (props.enableSearch === undefined)
       props.enableSearch = SelectionMenu.defaultProps.enableSearch;

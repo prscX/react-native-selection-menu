@@ -13,6 +13,7 @@ import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.irozon.alertview.AlertActionStyle;
 import com.irozon.alertview.AlertStyle;
+import com.irozon.alertview.AlertTheme;
 import com.irozon.alertview.AlertView;
 import com.irozon.alertview.interfaces.AlertActionListener;
 import com.irozon.alertview.objects.AlertAction;
@@ -51,18 +52,26 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
 
     String tickColor = props.getString("tickColor");
     String title = props.getString("title");
+    String subtitle = props.getString("subtitle");
     String actionTitle = props.getString("actionTitle");
+    int theme = props.getInt("theme");
 
     boolean enableSearch = props.getBoolean("enableSearch");
     String searchPlaceholder = props.getString("searchPlaceholder");
     String searchTintColor = props.getString("searchTintColor");
 
-    AlertView alert = new AlertView(title, "Message", AlertStyle.BOTTOM_SHEET);
+    AlertView alert = new AlertView(title, subtitle, AlertStyle.BOTTOM_SHEET);
     if (presentationType == 0 || presentationType == 1) {
       if (presentationType == 0) {
-        alert = new AlertView(title, "Message", AlertStyle.BOTTOM_SHEET);
+        alert = new AlertView(title, subtitle, AlertStyle.BOTTOM_SHEET);
       } else if (presentationType == 1) {
-        alert = new AlertView(title, "Message", AlertStyle.DIALOG);
+        alert = new AlertView(title, subtitle, AlertStyle.DIALOG);
+      }
+
+      if (theme == 0) {
+        alert.setTheme(AlertTheme.LIGHT);
+      } else if (theme == 1) {
+        alert.setTheme(AlertTheme.DARK);
       }
 
       for (int i = 0;i < values.size();i++) {

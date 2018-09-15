@@ -34,6 +34,7 @@ export default class App extends Component<Props> {
       selectedValues: ["One", "Two"],
       selectionType: 1,
       presentationType: 0,
+      theme: 1,
       enableSearch: false,
       searchPlaceholder: "Search Value",
       // searchTintColor: "#FFFFFF",
