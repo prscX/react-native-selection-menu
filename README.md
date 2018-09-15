@@ -102,9 +102,11 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 
 - **Selection**
 
-`Single ~> 0`
-<br/>
-`Multiple ~> 1`
+| Type                   | Value                |
+| ---------------------- | ------------------- |
+| `Single`     | `0`            |
+| `Multiple`     | `1`            |
+
 
 > **Limitation**: `Multiple selection is currently not supported on Android`
 
