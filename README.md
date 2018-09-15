@@ -106,6 +106,7 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 | `onSelection`     | `func`            |         | Specify onSelection callback function                 |
 
 - **iOS**
+
 | `selectedValues: iOS`     | `array`            |         | Specify selected values marked with tick                 |
 | `tickColor: iOS`     | `string: HEX-COLOR`            |    `#157efb`     | Specify tick color                 |
 | `actionTitle: iOS`     | `string`            |    `Select`     | Specify action title, this appear when selection type is `multiple`       |
