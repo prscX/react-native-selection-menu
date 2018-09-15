@@ -20,7 +20,9 @@ class SelectionMenu {
 
     enableSearch: PropTypes.bool,
     searchPlaceholder: PropTypes.string,
-    searchTintColor: PropTypes.string
+    searchTintColor: PropTypes.string,
+
+    onSelection: PropTypes.func
   };
 
   static defaultProps = {
@@ -62,7 +64,9 @@ class SelectionMenu {
     if (props.searchTintColor === undefined)
       props.searchTintColor = SelectionMenu.defaultProps.searchTintColor;
 
-    RNSelectionMenu.Show({ ...props });
+    RNSelectionMenu.Show({ ...props }, selectedValues => {
+      props.onSelection && props.onSelection(selectedValues);
+    });
   }
 
   static Alert(props) {

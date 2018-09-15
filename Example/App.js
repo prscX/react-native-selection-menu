@@ -48,9 +48,12 @@ export default class App extends Component<Props> {
       selectedValues: ["One", "Two"],
       selectionType: 1,
       presentationType: 0,
-      enableSearch: true,
+      enableSearch: false,
       searchPlaceholder: "Search Value",
       searchTintColor: "#FFFFFF",
+      onSelection: selectedValues => {
+        console.log("Selected Values: " + selectedValues);
+      },
       ...props
     });
   }

@@ -13,7 +13,7 @@
 RCT_EXPORT_MODULE()
 
 
-RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
+RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props onSelection:(RCTResponseSenderBlock)onSelection) {
     NSArray *values = [props objectForKey: @"values"];
     NSArray *selectionValues = [props objectForKey: @"selectedValues"];
     
@@ -30,11 +30,14 @@ RCT_EXPORT_METHOD(Show:(nonnull NSDictionary *)props) {
     
     RSSelectionMenuBridge *selectionMenu = [[RSSelectionMenuBridge alloc] initWithSelectionType:[selectionType intValue] tickColor: [RNSelectionMenu ColorFromHexCode: tickColor] dataSource:values];
 
-    if ([enableSearch intValue] == 1) {
+    if ([enableSearch intValue] == 1 || [presentationType intValue] == 2) {
         [selectionMenu searchWithPlaceHolder:searchPlaceholder tintColor: [RNSelectionMenu ColorFromHexCode: searchTintColor]];
     }
 
     [selectionMenu selectedWithItems: selectionValues];
+    [selectionMenu setOnDismiss:^(NSArray<NSString *> * _Nonnull newSelectedValues) {
+        onSelection(@[newSelectedValues]);
+    }];
     
     id<UIApplicationDelegate> app = [[UIApplication sharedApplication] delegate];
     [selectionMenu showFrom: app.window.rootViewController presentationStyle:[presentationType intValue] title:title action: actionTitle];
