@@ -14,6 +14,14 @@ If this project has helped you out, please support us with a star 🌟
 This library is a React Native bridge around native elegant selection list or dropdown menu for both Android and iOS.
 
 
+#### iOS
+
+| **[rushisangani/RSSelectionMenu](https://github.com/rushisangani/RSSelectionMenu)**             |
+| ----------------- |
+| <img src="./assets/ios-hero.gif" />                  |
+
+
+
 ## 📖 Getting started
 
 `$ npm install react-native-selection-menu --save`
