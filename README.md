@@ -20,7 +20,7 @@ This library is a React Native bridge around native elegant selection list or dr
 | ----------------- |
 | <img src="./assets/ios-hero.gif" />                  |
 
-#### iOS
+#### Android
 
 | **[Hamadakram/AlertView](https://github.com/Hamadakram/AlertView)**             |
 | ----------------- |
