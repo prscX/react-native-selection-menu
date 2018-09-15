@@ -83,23 +83,11 @@ allprojects {
 import { RNSelectionMenu } from 'react-native-selection-menu'
 ```
 
-* **Actionsheet**
+* **Actionsheet**: `RNSelectionMenu.Actionsheet(props)`
 
-```javascript
-RNSelectionMenu.Actionsheet(props)
-```
+* **Alert**: `RNSelectionMenu.Alert(props)`
 
-* **Alert**
-
-```javascript
-RNSelectionMenu.Alert(props)
-```
-
-* **Formsheet**
-
-```javascript
-RNSelectionMenu.Formsheet(props)
-```
+* **Formsheet**: `RNSelectionMenu.Formsheet(props)`
 
 
 ## 💡 Props
