@@ -90,6 +90,8 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 * **Formsheet**: `RNSelectionMenu.Formsheet(props)`
 
 
+
+
 ## 💡 Props
 
 - **General(iOS & Android)**
@@ -97,6 +99,13 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 | Prop                   | Type                | Default | Note                                             |
 | ---------------------- | ------------------- | ------- | ------------------------------------------------ |
 | ``     | ``            |         |                  |
+
+#### Selection
+| `Single`     | `0`            |
+| `Multiple`     | `1`            |
+
+> **Limitation**: `Multiple selection is currently not supported on Android`
+
 
 
 ## ✨ Credits
