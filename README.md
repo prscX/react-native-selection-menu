@@ -19,19 +19,19 @@ This library is a React Native bridge around native elegant selection list or dr
 
 #### iOS
 
-| **[rushisangani/RSSelectionMenu](https://github.com/rushisangani/RSSelectionMenu)**             |
-| ----------------- |
-| <img src="./assets/ios-hero.gif" />                  |
+| **[rushisangani/RSSelectionMenu](https://github.com/rushisangani/RSSelectionMenu)** |
+|-------------------------------------------------------------------------------------|
+| <img src="./assets/ios-hero.gif" />                                                 |
 
 #### Android
 
-| **[Hamadakram/AlertView](https://github.com/Hamadakram/AlertView)**             |
-| ----------------- |
-| <img src="https://github.com/Hamadakram/AlertView/raw/master/art/Banner.png?raw=true" />                  |
+| **[Hamadakram/AlertView](https://github.com/Hamadakram/AlertView)**                      |
+|------------------------------------------------------------------------------------------|
+| <img src="https://github.com/Hamadakram/AlertView/raw/master/art/Banner.png?raw=true" /> |
 
-| **[Hamadakram/AlertView](https://github.com/Hamadakram/AlertView)**             |
-| ----------------- |
-| <img src="https://cloud.githubusercontent.com/assets/8886687/26755439/869f9e6c-48a2-11e7-9e6c-829b573e7730.jpg" />                  |
+| **[Hamadakram/AlertView](https://github.com/Hamadakram/AlertView)**                                                |
+|--------------------------------------------------------------------------------------------------------------------|
+| <img src="https://cloud.githubusercontent.com/assets/8886687/26755439/869f9e6c-48a2-11e7-9e6c-829b573e7730.jpg" /> |
 
 
 
@@ -99,49 +99,53 @@ import { RNSelectionMenu } from 'react-native-selection-menu'
 
 - **General(iOS & Android)**
 
-| Prop                   | Type                | Default | Note                                             |
-| ---------------------- | ------------------- | ------- | ------------------------------------------------ |
-| `values`     | `array`            |         | Specify `string` array values you want to display for selection                  |
-| `title`     | `string`            |    `Pick your value`     | Specify title of selection menu                 |
-| `onSelection`     | `func`            |         | Specify onSelection callback function                 |
+| Prop          | Type     | Default           | Note                                                            |
+|---------------|----------|-------------------|-----------------------------------------------------------------|
+| `values`      | `array`  |                   | Specify `string` array values you want to display for selection |
+| `title`       | `string` | `Pick your value` | Specify title of selection menu                                 |
+| `onSelection` | `func`   |                   | Specify onSelection callback function                           |
 
 - **iOS**
 
-| `selectedValues`     | `array`            |         | Specify selected values marked with tick                 |
-| `tickColor`     | `string: HEX-COLOR`            |    `#157efb`     | Specify tick color                 |
-| `actionTitle`     | `string`            |    `Select`     | Specify action title, this appear when selection type is `multiple`       |
+| Prop             | Type                | Default   | Note                                                                |
+|------------------|---------------------|-----------|---------------------------------------------------------------------|
+| `selectedValues` | `array`             |           | Specify selected values marked with tick                            |
+| `tickColor`      | `string: HEX-COLOR` | `#157efb` | Specify tick color                                                  |
+| `actionTitle`    | `string`            | `Select`  | Specify action title, this appear when selection type is `multiple` |
 
 - **Android**
 
-| `subtitle`     | `string`            |         | Specify subtitle of menu                 |
-| `theme`     | `int`            |         | Specify theme of selection menu `[Light: 0/Dark: 1]`                 |
+| Prop       | Type     | Default | Note                                                 |
+|------------|----------|---------|------------------------------------------------------|
+| `subtitle` | `string` |         | Specify subtitle of menu                             |
+| `theme`    | `int`    |         | Specify theme of selection menu `[Light: 0/Dark: 1]` |
 
 
 - **Selection**
 
-| Type                   | Value                |
-| ---------------------- | ------------------- |
-| `Single`     | `0`            |
-| `Multiple`     | `1`            |
+| Type       | Value |
+|------------|-------|
+| `Single`   | `0`   |
+| `Multiple` | `1`   |
 
 
 > **Limitation**: `Multiple selection is currently not supported on Android`
 
 - **Presentation Style**
 
-| Type                   | Value                |
-| ---------------------- | ------------------- |
-| `Actionsheet`     | `0`            |
-| `Alert`     | `1`            |
-| `Formsheet`     | `2`            |
+| Type          | Value |
+|---------------|-------|
+| `Actionsheet` | `0`   |
+| `Alert`       | `1`   |
+| `Formsheet`   | `2`   |
 
 - **Search**
 
-| Prop                   | Type                | Default | Note                                             |
-| ---------------------- | ------------------- | ------- | ------------------------------------------------ |
-| `enableSearch`     | `bool`            |    `false`     | Enable/Disable search capability                 |
-| `searchPlaceholder`     | `string`            |    `Search`     | Specify your search placeholder value                 |
-| `searchTintColor: iOS`     | `string: HEX-COLOR`            |    `#d3d3d3`     | Specify search tint color                 |
+| Prop                   | Type                | Default   | Note                                  |
+|------------------------|---------------------|-----------|---------------------------------------|
+| `enableSearch`         | `bool`              | `false`   | Enable/Disable search capability      |
+| `searchPlaceholder`    | `string`            | `Search`  | Specify your search placeholder value |
+| `searchTintColor: iOS` | `string: HEX-COLOR` | `#d3d3d3` | Specify search tint color             |
 
 
 > **Limitation**
