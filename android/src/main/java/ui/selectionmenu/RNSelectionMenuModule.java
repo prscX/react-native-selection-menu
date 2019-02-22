@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.UiThreadUtil;
 import com.irozon.alertview.AlertActionStyle;
 import com.irozon.alertview.AlertStyle;
 import com.irozon.alertview.AlertTheme;
@@ -74,7 +75,7 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
         alert.setTheme(AlertTheme.DARK);
       }
 
-      for (int i = 0;i < values.size();i++) {
+      for (int i = 0; i < values.size(); i++) {
         alert.addAction(new AlertAction(values.getString(i), AlertActionStyle.DEFAULT, new AlertActionListener() {
           @Override
           public void onActionClick(@NotNull AlertAction action) {
@@ -83,25 +84,28 @@ public class RNSelectionMenuModule extends ReactContextBaseJavaModule {
         }));
       }
 
-      alert.show(getCurrentActivity());
+      final AlertView finalAlert = alert;
+
+      UiThreadUtil.runOnUiThread(new Thread(new Runnable() {
+        public void run() {
+          finalAlert.show(getCurrentActivity());
+        }
+      }));
     } else if (presentationType == 2) {
       ArrayList<SampleModel> items = new ArrayList<>();
-      for (int i = 0;i < values.size();i++) {
+      for (int i = 0; i < values.size(); i++) {
         items.add(new SampleModel(values.getString(i)));
       }
 
-      SimpleSearchDialogCompat dialog = new SimpleSearchDialogCompat(getCurrentActivity(), title,
-              searchPlaceholder, null, items,
-              new SearchResultListener<SampleModel>() {
-                @Override
-                public void onSelected(BaseSearchDialogCompat dialog,
-                                       SampleModel item, int position) {
+      SimpleSearchDialogCompat dialog = new SimpleSearchDialogCompat(getCurrentActivity(), title, searchPlaceholder,
+          null, items, new SearchResultListener<SampleModel>() {
+            @Override
+            public void onSelected(BaseSearchDialogCompat dialog, SampleModel item, int position) {
 
-                  callback.invoke(item.getTitle());
-                  dialog.dismiss();
-                }
-              });
-
+              callback.invoke(item.getTitle());
+              dialog.dismiss();
+            }
+          });
 
       dialog.show();
       dialog.getSearchBox().setTypeface(Typeface.SERIF);
