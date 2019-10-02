@@ -37,7 +37,44 @@ This library is a React Native bridge around native elegant selection list or dr
 
 ## 📖 Getting started
 
-`$ npm install react-native-selection-menu --save`
+`$ yarn add react-native-selection-menu --save`
+
+## **RN60 >= RNSM V1 >**
+
+> RN60 above please use `react-native-selection-menu` V1 and above
+
+- **iOS**
+
+> **iOS Prerequisite:** Please make sure `CocoaPods` is installed on your system
+
+	- Add the following to your `Podfile` -> `ios/Podfile` and run pod update:
+
+
+```
+  use_native_modules!
+
+  pod 'RNSelectionMenu', :path => '../node_modules/react-native-selection-menu/ios'
+
+  use_frameworks!
+
+  pod 'RSSelectionMenu', :git => 'https://github.com/prscX/RSSelectionMenu.git', :branch => 'objc-bridge'
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name.include?('RSSelectionMenu')
+        target.build_configurations.each do |config|
+          config.build_settings['SWIFT_VERSION'] = '4.1'
+        end
+      end
+    end
+  end
+```
+
+- **Android**
+
+## **RN60 < RNSM V1 <**
+
+> RN60 below please use `react-native-selection-menu` V.0.*
 
 `$ react-native link react-native-selection-menu`
 

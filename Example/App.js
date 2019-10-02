@@ -46,18 +46,18 @@ export default class App extends Component<Props> {
 
   render() {
     return <ImageBackground source={require("./assets/background.jpg")} style={styles.backgroundImage}>
-          <Button onPress={() => {
-              this._onPress({ presentationType: 0 });
-            }} title={"Actionsheet"} />
-          <View style={{ height: 30 }} />
-          <Button onPress={() => {
-              this._onPress({ presentationType: 1 });
-            }} title={"Alert"} />
-          <View style={{ height: 30 }} />
-          <Button onPress={() => {
-              this._onPress({ presentationType: 2 });
-            }} title={"Formsheet"} />
-      </ImageBackground>;
+      <Button onPress={() => {
+        this._onPress({ presentationType: 0 });
+      }} title={"Actionsheet"} />
+      <View style={{ height: 30 }} />
+      <Button onPress={() => {
+        this._onPress({ presentationType: 1 });
+      }} title={"Alert"} />
+      <View style={{ height: 30 }} />
+      <Button onPress={() => {
+        this._onPress({ presentationType: 2 });
+      }} title={"Formsheet"} />
+    </ImageBackground>;
   }
 }
 
