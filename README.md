@@ -51,23 +51,40 @@ This library is a React Native bridge around native elegant selection list or dr
 
 
 ```
+
   use_native_modules!
 
   pod 'RNSelectionMenu', :path => '../node_modules/react-native-selection-menu/ios'
 
   use_frameworks!
 
-  pod 'RSSelectionMenu', :git => 'https://github.com/prscX/RSSelectionMenu.git', :branch => 'objc-bridge'
+  pod 'RSSelectionMenu', :git => 'https://github.com/prscX/RSSelectionMenu.git', :branch => 'react-native'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
       if target.name.include?('RSSelectionMenu')
         target.build_configurations.each do |config|
-          config.build_settings['SWIFT_VERSION'] = '4.1'
+          config.build_settings['SWIFT_VERSION'] = '4.2'
         end
       end
     end
   end
+
+  dynamic_frameworks = ['RSSelectionMenu']
+  # Make all the other frameworks into static frameworks by overriding the static_framework? function to return true
+  pre_install do |installer|
+    installer.pod_targets.each do |pod|
+      if !dynamic_frameworks.include?(pod.name)
+        def pod.static_framework?;
+          true
+        end
+        def pod.build_type;
+          Pod::BuildType.static_library
+        end
+      end
+    end
+  end
+
 ```
 
 - **Android**

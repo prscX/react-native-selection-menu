@@ -1,6 +1,6 @@
 {
   "name": "react-native-selection-menu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native: Native Selection Menu",
   "main": "RNSelectionMenu.js",
   "homepage": "https://github.com/prscX/react-native-selection-menu.git",
@@ -18,7 +18,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "prettier-pack": "0.0.8"
+    "prettier-pack": "0.0.9"
   },
   "license": "Apache License 2.0"
 }
